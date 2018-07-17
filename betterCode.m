@@ -18,11 +18,11 @@ for k=1:length(dataList)
         traceMatrix(:,i) = Voltage(2000*(i-1)+1:2000*i);
     end
 
-    %figure(k)
-%     for i=1:numtraces
-%         plot(times, traceMatrix(:,i), 'b-')
-%         hold on
-%     end
+    figure(k)
+    for i=1:numtraces
+        plot(times, traceMatrix(:,i), 'r-')
+        hold on
+    end
 
     [artifactTimes, baselinedTraces, ~, ~, ~, ~, ~] = betterBaseline(times, traceMatrix);
     % for i=1:length(artifactTimes)

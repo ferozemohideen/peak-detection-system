@@ -1,9 +1,10 @@
 function [indices] = findROI(meanTrace, times, k)
-    figure(k)
+    %figure(k)
     [~, ~, startIndex, endIndex, ~, maxindex, firstmin] = betterBaseline(times, meanTrace);
-    plot(times,meanTrace,'r-')
+    %plot(times,meanTrace,'r-')
+    %hold on
+    %plot(times(maxindex:end), smoothdata(meanTrace(maxindex:end), 'movmean', 11), 'b-')
     hold on
-    plot(times(maxindex:end), smoothdata(meanTrace(maxindex:end), 'movmean', 11), 'b-')
     plot(times(startIndex), meanTrace(startIndex), 'g*', times(endIndex), meanTrace(endIndex), 'r*',...
         times(firstmin+maxindex), meanTrace(firstmin+maxindex), 'r*')
     
