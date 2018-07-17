@@ -43,7 +43,7 @@ for k=1:length(dataList)
     %plot(times(maxindex:end), smoothendata, 'b-')
 % %     title(titleOfGraph)
     
-    [indices] = findROI(meanTrace,times, k);
+    [indices] = findROI(meanTrace,times);
     %plot(times(indices), meanTrace(indices), 'b-', 'LineWidth', 2)
 
 %     try
