@@ -1,0 +1,66 @@
+There are 3 folders which contain data and code for CMAP and CNAP in vivo data and WSA template distortion simulation. 
+
+
+
+WSA of NCAP data -----------------------------------------------------
+Directory: WSAdata--> CNAP
+
+Run SN_Xcorr.m
+
+Select from a response of an injured or uninjured nerve folder --> select 2 or more .txt files of the same animal (i.e. *BM-XX* where XX is one of 05, 06, 09, 11, 12, or 16).  The more files from the same animal, WSA produce a more accurate output (we used 3 signals for data presented in the manuscript). Each signal selected will generate a figure with 4 subplots: 
+
+Subplot 1: raw signal
+Subplot 2: the raw signal DC shifted and with the stimulus artefact removed
+Subplot 3: subplot 2 with the template signal (red) overlayed 
+Subplot 4: the cross correlation sequence with the (positive in red; negative in blue), the threshold level of detection (green)  
+
+The second last figure will produce a plot of the mean (black) and standard deviation (red) of the cross correlation sequence between the temple signal and each of the signals selected
+
+The last figure will indicate the peaks where the mean is 4* the standard deviation. These peaks are reproduced in the command window. 
+
+
+
+
+WSA of MCAP data------------------------------------------------------
+Examination of single pulses can be performed in the same was as for NCAP above. 
+Directory: WSAdata--> CMAP. Use M_Xcorr.m in the same was as described above for SN_Xcorr.m. Note the threshold for event detection is 2*SD (not 4*SD as for SN_Xcorr.m ).
+
+To examine data with paired pulses: 
+Directory: WSAdata--> CMAP--> select a folder beginning with rSci-->select a folder ending in LEMG for an intact nerve response, or REMG for data from the contralateral injured nerve. Then: 
+
+1) run M_ffreq_pt1_01.m
+
+- select the first 2 or 3 files in the list to produce a signal for subtracting from the conditioning signal: A figure will pop up with the selected signals in blue and the mean of the signals in red. Inspect your signals to ensure you have selected a signal without paired pulse stimulus. If you have selected a signal with a paired pulse stimulus (signals of paired-pulse stimuli usually start from *0004.txt onwards), you will have to start again. 
+
+- A second file selection window will prompt you to select the remaining files with paired-pulse stimuli, select the remainder in the list. NB the last 2-3 signals may be single pulse responses.
+  
+The script will perform a subtraction of the mean of single pulse signals (derived from the first input selection of files) from the paired pulse signals (derived from the second input selection of files). 
+ 
+This script will produce: 
+Figure 1: the single pulse signals in blue, and the mean of those signals in red
+Figure 2: the mean signal by itself
+Figures 3…n: the remainder of the figures will produce two sub figures:  the top shows the mean signal (red) and the signal with the paired pulse (blue); the bottom signal will produce the subtraction of the single pulse from the paired-pulse response, leaving the response from the test pulse.These data will be saved in a matrix called ffdados.mat, which is necessary to run the next script.
+
+2) run M_ffreq_pt2_01.m
+
+- once you have generated the ffdados.mat file, you can run this script. It performs WSA on each of the prepared signals saved in ffdados.mat . 
+This script produces: 
+
+Figures each with 3 subplots: 
+The top subplot is the signal from ffdados.mat
+The middle subplot is the cross-correlation sequence (positive red, negative blue), 
+The bottom subplot shows only the correlation that is above the threshold level. The peaks from the bottom subplot are reproduced in the command window. 
+
+
+
+WSA simulation data------------------------------------------------------
+
+Directory: WSAdata--> WSA simulation 
+
+The example demonstrates the effect of distorting the template. 
+
+Run the SignalNoise_simulation.m script. The instructions are embedded in the script and it produces data as shown in Fig. 5A-D of the manuscript. 
+
+The excel spreadsheet shows the data analysis for the simulation, including the trained eye analysis (TEA) data. The first tab shows latency and magnitude data, the second tab shows the effect of varying the template on latency error. The data generated here was described by the equation in the results section of the manuscript.  
+
+
