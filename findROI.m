@@ -1,4 +1,4 @@
-function [indices] = findROI(meanTrace, times, k)
+function [indices, amplitude] = findROI(meanTrace, times)
     %figure(k)
     [~, ~, startIndex, endIndex, ~, maxindex, firstmin] = betterBaseline(times, meanTrace);
     %plot(times,meanTrace,'r-')
@@ -135,5 +135,7 @@ function [indices] = findROI(meanTrace, times, k)
             end
             plot(times(indices), meanTrace(indices), 'b-', 'LineWidth', 2)
         end
-     end  
+    end  
+    values = meanTrace(indices);
+    amplitude = abs(max(values)-min(values));
 end

@@ -63,5 +63,5 @@ for k=1:length(dataList)
     %xdistance = (times(indices(end))-times(indices(1)));
     %rectangle('Position', [times(indices(1)) meanTrace(peakIndex)-0.1 xdistance 2*abs(meanTrace(peakIndex))])
 end
-csvwrite('ctrlamplitudes', transpose(ctrlamplitudes));
-csvwrite('ptxamplitudes', transpose(ptxamplitudes));
+csvwrite('ctrlamplitudes', ctrlamplitudes);
+csvwrite(
