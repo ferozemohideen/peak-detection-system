@@ -1,6 +1,6 @@
 %% Read in data
 clear
-dataList = dir('Ferozes data/*.txt');
+dataList = dir('ptx different conc/*.txt');
 %dataList = dataList(1:10);
 ctrlamplitudes = [];
 ctrllatencies = [];
@@ -24,13 +24,17 @@ for k=1:length(dataList)
         traceMatrix(:,i) = Voltage(2000*(i-1)+1:2000*i);
     end
 
-    figure(k)
-    for i=1:numtraces
-        plot(times, traceMatrix(:,i), 'r-')
-        hold on
+     figure(k)
+%     for i=1:numtraces
+%         plot(times, traceMatrix(:,i), 'r-')
+%         hold on
+%     end
+    try
+        [artifactTimes, baselinedTraces, ~, ~, ~, ~, ~] = betterBaseline(times, traceMatrix);
+    catch   
+        warning('error in calculating %s', titleOfGraph)
+        continue
     end
-
-    [artifactTimes, baselinedTraces, ~, ~, ~, ~, ~] = betterBaseline(times, traceMatrix);
     % for i=1:length(artifactTimes)
     %     plot(artifactTimes(1,i), artifactTimes(2,i),  'r.')
     %     hold on
@@ -69,8 +73,8 @@ for k=1:length(dataList)
     %xdistance = (times(indices(end))-times(indices(1)));
     %rectangle('Position', [times(indices(1)) meanTrace(peakIndex)-0.1 xdistance 2*abs(meanTrace(peakIndex))])
 end
-csvwrite('ctrlamplitudes', transpose(ctrlamplitudes));
-csvwrite('ctrllatencies', transpose(1./ctrllatencies));
+%csvwrite('ctrlamplitudes', transpose(ctrlamplitudes));
+%csvwrite('ctrllatencies', transpose(1./ctrllatencies));
 
-csvwrite('ptxamplitudes', transpose(ptxamplitudes));
-csvwrite('ptxlatencies', transpose(1./ptxlatencies));
+%csvwrite('ptxamplitudes', transpose(ptxamplitudes));
+%csvwrite('ptxlatencies', transpose(1./ptxlatencies));

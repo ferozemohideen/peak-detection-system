@@ -2,11 +2,179 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c0fc170a-afa6-4cf6-957f-88314dcced27" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferozes Data/ctrl 1.1.1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferozes Data/ctrl 1.1.2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferozes Data/ctrl 1.1.3.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferozes Data/ctrl 1.1.4.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferozes Data/ctrl 1.2.1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferozes Data/ctrl 1.2.2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferozes Data/ctrl 1.2.3.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferozes Data/ctrl 1.2.4.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferozes Data/ctrl 2.1.1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferozes Data/ctrl 2.1.2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferozes Data/ctrl 2.1.3.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferozes Data/ctrl 2.1.4.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferozes Data/ctrl 2.2.1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferozes Data/ctrl 2.2.2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferozes Data/ctrl 2.2.3.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferozes Data/ctrl 2.2.4.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferozes Data/ctrl 3.1.1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferozes Data/ctrl 3.1.2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferozes Data/ctrl 3.1.3.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferozes Data/ctrl 3.1.4.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferozes Data/ctrl 3.2.1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferozes Data/ctrl 3.2.2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferozes Data/ctrl 3.2.3.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferozes Data/ctrl 3.2.4.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferozes Data/ctrl 4.1.1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferozes Data/ctrl 4.1.2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferozes Data/ctrl 4.1.3.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferozes Data/ctrl 4.1.4.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferozes Data/ctrl 4.2.1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferozes Data/ctrl 4.2.2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferozes Data/ctrl 4.2.3.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferozes Data/ctrl 4.2.4.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferozes Data/ptx 200nM 1.1.1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferozes Data/ptx 200nM 1.1.2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferozes Data/ptx 200nM 1.1.3.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferozes Data/ptx 200nM 1.1.4.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferozes Data/ptx 200nM 1.2.1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferozes Data/ptx 200nM 1.2.3.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferozes Data/ptx 200nM 1.2.4.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferozes Data/ptx 200nM 2.1.1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferozes Data/ptx 200nM 2.1.2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferozes Data/ptx 200nM 2.1.3.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferozes Data/ptx 200nM 2.1.4.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferozes Data/ptx 200nM 2.2.1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferozes Data/ptx 200nM 2.2.2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferozes Data/ptx 200nM 2.2.3.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferozes Data/ptx 200nM 2.2.4.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferozes Data/ptx 200nM 3.1.1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferozes Data/ptx 200nM 3.1.2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferozes Data/ptx 200nM 3.1.3.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferozes Data/ptx 200nM 3.1.4.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferozes Data/ptx 200nM 3.2.1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferozes Data/ptx 200nM 3.2.2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferozes Data/ptx 200nM 3.2.3.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferozes Data/ptx 200nM 3.2.4.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferozes Data/ptx 200nM 4.1.1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferozes Data/ptx 200nM 4.1.2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferozes Data/ptx 200nM 4.1.3.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferozes Data/ptx 200nM 4.1.4.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferozes Data/ptx 200nM 4.2.1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferozes Data/ptx 200nM 4.2.2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferozes Data/ptx 200nM 4.2.3.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferozes Data/ptx 200nM 4.2.4.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferozes Data/ptx 200nM 5.1.1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferozes Data/ptx 200nM 5.1.2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferozes Data/ptx 200nM 5.1.4.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferozes Data/ptx 200nM 5.2.1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferozes Data/ptx 200nM 5.2.2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferozes Data/ptx 200nM 5.2.3.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferozes Data/ptx 200nM 6.1.1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferozes Data/ptx 200nM 6.1.2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferozes Data/ptx 200nM 6.1.3.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferozes Data/ptx 200nM 6.1.4.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferozes Data/ptx 200nM 6.2.1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferozes Data/ptx 200nM 6.2.2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferozes Data/ptx 200nM 6.2.3.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferozes Data/ptx 200nM 6.2.4.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferozes Data/ptx 200nM 8.1.1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferozes Data/ptx 200nM 8.1.2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferozes Data/ptx 200nM 8.1.3.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferozes Data/ptx 200nM 8.1.4.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferozes Data/ptx 200nM 8.2.1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferozes Data/ptx 200nM 8.2.2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferozes Data/ptx 200nM 8.2.3.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ferozes Data/ptx 200nM 8.2.4.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/betterBaseline.m" beforeDir="false" afterPath="$PROJECT_DIR$/betterBaseline.m" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/betterCode.m" beforeDir="false" afterPath="$PROJECT_DIR$/betterCode.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_visualization.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_visualization.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/findROI.asv" beforeDir="false" afterPath="$PROJECT_DIR$/findROI.asv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ctrl 1.1.1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ctrl 1.1.1.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ctrl 1.1.2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ctrl 1.1.2.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ctrl 1.1.3.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ctrl 1.1.3.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ctrl 1.1.4.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ctrl 1.1.4.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ctrl 1.2.1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ctrl 1.2.1.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ctrl 1.2.2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ctrl 1.2.2.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ctrl 1.2.3.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ctrl 1.2.3.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ctrl 1.2.4.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ctrl 1.2.4.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ctrl 2.1.1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ctrl 2.1.1.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ctrl 2.1.2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ctrl 2.1.2.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ctrl 2.1.3.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ctrl 2.1.3.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ctrl 2.1.4.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ctrl 2.1.4.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ctrl 2.2.1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ctrl 2.2.1.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ctrl 2.2.2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ctrl 2.2.2.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ctrl 2.2.3.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ctrl 2.2.3.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ctrl 2.2.4.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ctrl 2.2.4.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ctrl 3.1.1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ctrl 3.1.2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ctrl 3.1.3.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ctrl 3.1.4.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ctrl 3.2.1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ctrl 3.2.2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ctrl 3.2.3.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ctrl 3.2.4.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ctrl 4.1.1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ctrl 4.1.2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ctrl 4.1.3.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ctrl 4.1.4.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ctrl 4.2.1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ctrl 4.2.2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ctrl 4.2.3.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ctrl 4.2.4.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/findROI.m" beforeDir="false" afterPath="$PROJECT_DIR$/findROI.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ptx 200nM 1.1.1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ptx 200nM 1.1.1.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ptx 200nM 1.1.2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ptx 200nM 1.1.2.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ptx 200nM 1.1.3.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ptx 200nM 1.1.3.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ptx 200nM 1.1.4.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ptx 200nM 1.1.4.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ptx 200nM 1.2.1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ptx 200nM 1.2.1.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ptx 200nM 1.2.3.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ptx 200nM 1.2.3.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ptx 200nM 1.2.4.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ptx 200nM 2.1.1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ptx 200nM 2.1.1.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ptx 200nM 2.1.2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ptx 200nM 2.1.2.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ptx 200nM 2.1.3.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ptx 200nM 2.1.3.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ptx 200nM 2.1.4.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ptx 200nM 2.1.4.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ptx 200nM 2.2.1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ptx 200nM 2.2.1.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ptx 200nM 2.2.2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ptx 200nM 2.2.2.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ptx 200nM 2.2.3.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ptx 200nM 2.2.3.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ptx 200nM 2.2.4.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ptx 200nM 3.1.1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ptx 200nM 3.1.2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ptx 200nM 3.1.3.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ptx 200nM 3.1.4.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ptx 200nM 3.2.1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ptx 200nM 3.2.2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ptx 200nM 3.2.3.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ptx 200nM 3.2.4.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ptx 200nM 4.1.1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ptx 200nM 4.1.2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ptx 200nM 4.1.3.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ptx 200nM 4.1.4.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ptx 200nM 4.2.1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ptx 200nM 4.2.2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ptx 200nM 4.2.3.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ptx 200nM 4.2.4.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ptx 200nM 5.1.1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ptx 200nM 5.1.2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ptx 200nM 5.1.4.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ptx 200nM 5.2.1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ptx 200nM 5.2.2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ptx 200nM 5.2.3.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ptx 200nM 6.1.1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ptx 200nM 6.1.2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ptx 200nM 6.1.3.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ptx 200nM 6.1.4.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ptx 200nM 6.2.1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ptx 200nM 6.2.2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ptx 200nM 6.2.3.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ptx 200nM 6.2.4.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ptx 200nM 8.1.1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ptx 200nM 8.1.2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ptx 200nM 8.1.3.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ptx 200nM 8.1.4.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ptx 200nM 8.2.1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ptx 200nM 8.2.2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ptx 200nM 8.2.3.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ptx 200nM 8.2.4.txt" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -48,7 +216,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
+  <component name="ProjectFrameBounds">
     <option name="x" value="1905" />
     <option name="width" value="1948" />
     <option name="height" value="2075" />
@@ -127,7 +295,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="762" y="0" width="779" height="830" extended-state="1" />
+    <frame x="762" y="0" width="779" height="830" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25032595" />

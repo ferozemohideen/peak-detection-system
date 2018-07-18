@@ -1,7 +1,7 @@
 function [indices, amplitude, latency] = findROI(meanTrace, times)
     %figure(k)
     [~, ~, startIndex, endIndex, ~, maxindex, firstmin] = betterBaseline(times, meanTrace);
-    %plot(times,meanTrace,'r-')
+    plot(times,meanTrace,'r-')
     %hold on
     %plot(times(maxindex:end), smoothdata(meanTrace(maxindex:end), 'movmean', 11), 'b-')
     hold on
@@ -11,7 +11,7 @@ function [indices, amplitude, latency] = findROI(meanTrace, times)
     wave = meanTrace(endIndex:end)-(meanTrace(endIndex)-meanTrace(startIndex));
     wave = smoothdata(wave,'movmean', 10);
     %plot(times(endIndex:end), wave, 'b-')
-    [~, ~, wdths, proms] = findpeaks(meanTrace(1:startIndex));
+    [~, ~, wdths, proms] = findpeaks(meanTrace(startIndex-100:startIndex));
     [~, locs] = findpeaks(wave, 'MinPeakProminence', max(proms), 'MinPeakWidth', mean(wdths));
     [~, vlocs] = findpeaks(-wave, 'MinPeakProminence', max(proms), 'MinPeakWidth', mean(wdths));
     

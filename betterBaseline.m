@@ -9,7 +9,11 @@ function [artifactTimes, output, startIndex, endIndex, smoothendata,maxindex, fi
             maxindex = find(trace == max(trace), 1);
             smoothendata = smoothdata(trace(maxindex:end),'movmean',12);
             [~, locs] = findpeaks(-smoothendata);
-            firstmin = locs(1);
+            if isempty(locs)
+                firstmin = 20; % bad estimation
+            else
+                firstmin = locs(1);
+            end
             %finish = find(abs(gradient(smoothendata(firstmin+5:end))) < 0.05, 1);
             [~, locs] = findpeaks(smoothendata(firstmin:end));
             finish = locs(1);
