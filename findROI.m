@@ -1,12 +1,12 @@
-function [indices, amplitude] = findROI(meanTrace, times)
+function [indices, amplitude, latency] = findROI(meanTrace, times)
     %figure(k)
     [~, ~, startIndex, endIndex, ~, maxindex, firstmin] = betterBaseline(times, meanTrace);
     %plot(times,meanTrace,'r-')
     %hold on
     %plot(times(maxindex:end), smoothdata(meanTrace(maxindex:end), 'movmean', 11), 'b-')
     hold on
-    plot(times(startIndex), meanTrace(startIndex), 'g*', times(endIndex), meanTrace(endIndex), 'r*',...
-        times(firstmin+maxindex), meanTrace(firstmin+maxindex), 'r*')
+    plot(times(startIndex), meanTrace(startIndex), 'g*', times(endIndex), meanTrace(endIndex), 'b*',...
+        times(firstmin+maxindex), meanTrace(firstmin+maxindex), 'b*')
     
     wave = meanTrace(endIndex:end)-(meanTrace(endIndex)-meanTrace(startIndex));
     wave = smoothdata(wave,'movmean', 10);
@@ -51,7 +51,7 @@ function [indices, amplitude] = findROI(meanTrace, times)
             i = i + 1;
         end
         plot(times(indices), meanTrace(indices), 'b-', 'LineWidth', 2)
-        
+        latency = peak-startIndex;
     elseif isempty(locs) % no peaks, only valley
         valley = vlocs(1)+endIndex;
         if abs(meanTrace(endIndex) - meanTrace(firstmin+maxindex)) > 1
@@ -79,6 +79,7 @@ function [indices, amplitude] = findROI(meanTrace, times)
             i = i + 1;
         end
         plot(times(indices), meanTrace(indices), 'b-', 'LineWidth', 2)
+        latency = valley-startIndex;
     else
         valley = vlocs(1)+endIndex;
         peak = locs(1)+endIndex;
@@ -108,6 +109,7 @@ function [indices, amplitude] = findROI(meanTrace, times)
                 i = i + 1;
             end
             plot(times(indices), meanTrace(indices), 'b-', 'LineWidth', 2)
+            latency = valley-startIndex;
         else % peak first
             if abs(meanTrace(endIndex) - meanTrace(firstmin+maxindex)) > 1
                 indices = endIndex:peak;
@@ -134,6 +136,7 @@ function [indices, amplitude] = findROI(meanTrace, times)
                 i = i + 1;
             end
             plot(times(indices), meanTrace(indices), 'b-', 'LineWidth', 2)
+            latency = peak-startIndex;
         end
     end  
     values = meanTrace(indices);

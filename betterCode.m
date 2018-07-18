@@ -3,7 +3,11 @@ clear
 dataList = dir('Ferozes data/*.txt');
 %dataList = dataList(1:10);
 ctrlamplitudes = [];
+ctrllatencies = [];
+
 ptxamplitudes = [];
+ptxlatencies = [];
+
 for k=1:length(dataList)
     data = load(dataList(k).name);
     titleOfGraph = string(dataList(k).name);
@@ -47,11 +51,13 @@ for k=1:length(dataList)
     
     
     if contains(titleOfGraph, "ctrl")
-        [indices, temp] = findROI(meanTrace,times);
+        [indices, temp, latency] = findROI(meanTrace,times);
         ctrlamplitudes = [ctrlamplitudes temp];
+        ctrllatencies = [ctrllatencies latency];
     else
-        [indices, temp] = findROI(meanTrace,times);
+        [indices, temp, latency] = findROI(meanTrace,times);
         ptxamplitudes = [ptxamplitudes temp];
+        ptxlatencies = [ptxlatencies latency];
     end
     %plot(times(indices), meanTrace(indices), 'b-', 'LineWidth', 2)
 
@@ -64,4 +70,7 @@ for k=1:length(dataList)
     %rectangle('Position', [times(indices(1)) meanTrace(peakIndex)-0.1 xdistance 2*abs(meanTrace(peakIndex))])
 end
 csvwrite('ctrlamplitudes', transpose(ctrlamplitudes));
+csvwrite('ctrllatencies', transpose(1./ctrllatencies));
+
 csvwrite('ptxamplitudes', transpose(ptxamplitudes));
+csvwrite('ptxlatencies', transpose(1./ptxlatencies));
