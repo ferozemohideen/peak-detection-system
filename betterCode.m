@@ -47,19 +47,14 @@ for k=1:length(dataList)
     %     plot(artifactTimes(3,i), artifactTimes(4,i),  'r.')
     %     hold on
     % end
-     meanTrace = mean(baselinedTraces, 2);
-    
-    %plot(times(endIndex:end), meanTrace(endIndex:end), 'b-')
-    %plot(times(maxindex:end), smoothendata, 'b-')
-% %     title(titleOfGraph)
-    
+     meanTrace = mean(baselinedTraces, 2);    
     
     if contains(titleOfGraph, "ctrl")
-        [indices, temp, latency] = findROI(meanTrace,times);
+        [indices, temp, latency] = findROI(meanTrace,times,k);
         ctrlamplitudes = [ctrlamplitudes temp];
         ctrllatencies = [ctrllatencies latency];
     else
-        [indices, temp, latency] = findROI(meanTrace,times);
+        [indices, temp, latency] = findROI(meanTrace,times,k);
         ptxamplitudes = [ptxamplitudes temp];
         ptxlatencies = [ptxlatencies latency];
     end
@@ -67,9 +62,7 @@ for k=1:length(dataList)
 
 %     try
 %         axis([times(startIndex-50) times(indices(end)+400) meanTrace(peakIndex)-5 -meanTrace(peakIndex)+5])
-%     catch
-%         warning('this one is ALSO wrong lmao');
-%     end
+
     %xdistance = (times(indices(end))-times(indices(1)));
     %rectangle('Position', [times(indices(1)) meanTrace(peakIndex)-0.1 xdistance 2*abs(meanTrace(peakIndex))])
 end
