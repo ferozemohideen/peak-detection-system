@@ -10,7 +10,7 @@ function [indices, amplitude, latency] = findROI(meanTrace, times, k)
     stdev = 0;
     smoothingfactor = 12;
     
-    while(stdev < 9e-02)
+    while(stdev < 0.15)
         wave = meanTrace(endIndex:end)-(meanTrace(endIndex)-meanTrace(startIndex));
         wave = smoothdata(wave,'movmean', smoothingfactor);
         %plot(times(endIndex:end), wave, 'b-')

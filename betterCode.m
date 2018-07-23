@@ -2,11 +2,8 @@
 clear
 dataList = dir('ptx different conc/*.txt');
 %dataList = dataList(1:10);
-ctrlamplitudes = [];
-ctrllatencies = [];
 
-ptxamplitudes = [];
-ptxlatencies = [];
+excelwrite = {'File', 'Amplitude','Scaled NCV'};
 
 for k=1:length(dataList)
     data = load(dataList(k).name);
@@ -33,6 +30,7 @@ for k=1:length(dataList)
         [artifactTimes, baselinedTraces, ~, ~, ~, ~, ~] = betterBaseline(times, traceMatrix);
     catch   
         warning('error in calculating %s', titleOfGraph)
+        excelwrite = [excelwrite; titleOfGraph, NaN, NaN];
         continue
     end
     % for i=1:length(artifactTimes)
@@ -47,17 +45,10 @@ for k=1:length(dataList)
     %     plot(artifactTimes(3,i), artifactTimes(4,i),  'r.')
     %     hold on
     % end
-     meanTrace = mean(baselinedTraces, 2);    
-    
-    if contains(titleOfGraph, "ctrl")
-        [indices, temp, latency] = findROI(meanTrace,times,k);
-        ctrlamplitudes = [ctrlamplitudes temp];
-        ctrllatencies = [ctrllatencies latency];
-    else
-        [indices, temp, latency] = findROI(meanTrace,times,k);
-        ptxamplitudes = [ptxamplitudes temp];
-        ptxlatencies = [ptxlatencies latency];
-    end
+    meanTrace = mean(baselinedTraces, 2);    
+     
+    [indices, temp, latency] = findROI(meanTrace,times,k);
+    excelwrite = [excelwrite; titleOfGraph, temp, 1/latency];
     %plot(times(indices), meanTrace(indices), 'b-', 'LineWidth', 2)
 
 %     try
@@ -71,3 +62,6 @@ end
 
 %csvwrite('ptxamplitudes', transpose(ptxamplitudes));
 %csvwrite('ptxlatencies', transpose(1./ptxlatencies));
+filename = 'ptxdiffconc.xlsx';
+xlswrite(filename,excelwrite)
+
