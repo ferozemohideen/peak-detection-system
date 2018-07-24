@@ -3,35 +3,20 @@ import numpy as np
 import seaborn as sns
 import matplotlib.pyplot as plt
 
-ctrlamp = pd.read_csv('ctrlamplitudes', header=None)
-ctrlamp['Label'] = pd.Series(['ctrl' for x in ctrlamp[0]], index=ctrlamp.index)
-ctrlamp.columns = ['Amplitude', 'Label']
+df = pd.read_excel('ptxdiffconc.xlsx')
+df.dropna(inplace=True)
+df2 = df.groupby('Group').mean()
+df2 = df2.reindex(['ctrl', 'ptx 1nM', 'ptx 10nM', 'ptx 100nM', 'ptx 150nM', 'ptx 200nM'])
+df2 = df2.reset_index()
+print(df2)
 
-ptxamp = pd.read_csv('ptxamplitudes', header=None)
-ptxamp['Label'] = pd.Series(['ptx' for x in ptxamp[0]], index=ptxamp.index)
-ptxamp.columns = ['Amplitude', 'Label']
+# variable = 'Scaled NCV'
+# sns.boxplot(x='Group',y=variable,data=df)
+# plt.title(variable+' vs Group')
+# plt.show()
 
-ctrlatency = pd.read_csv('ctrllatencies', header=None)
-ctrlatency['Label'] = pd.Series(['ctrl' for x in ctrlatency[0]], index=ctrlatency.index)
-ctrlatency.columns = ['NCV', 'Label']
+sns.pointplot(x='Group', y='Scaled NCV', data=df2, order=['ctrl', 'ptx 1nM', 'ptx 10nM', 'ptx 100nM', 'ptx 150nM', 'ptx 200nM'])
+plt.show()
 
-ptxlatency = pd.read_csv('ptxlatencies', header=None)
-ptxlatency['Label'] = pd.Series(['ptx' for x in ptxlatency[0]], index=ptxlatency.index)
-ptxlatency.columns = ['NCV', 'Label']
-
-df1 = pd.concat([ctrlamp, ptxamp])
-df2 = pd.concat([ctrlatency, ptxlatency])
-
-fig, ax = plt.subplots(nrows=1, ncols=3)
-fig.set_size_inches(10, 5, forward=True)
-
-ax[0].set_title("Amplitudes")
-ax[1].set_title("Scaled NCV")
-ax[2].set_title("Scaled NCV Bargraph")
-
-sns.boxplot(y='Label', x='Amplitude', data=df1, ax=ax[0])
-sns.boxplot(y='Label', x='NCV', data=df2, ax=ax[1])
-sns.barplot(x='Label', y='NCV', data=df2, ax=ax[2])
-
-plt.tight_layout()
+sns.boxplot(x='Group', y='Scaled NCV', data=df)
 plt.show()

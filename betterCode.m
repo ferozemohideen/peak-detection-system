@@ -3,11 +3,18 @@ clear
 dataList = dir('ptx different conc/*.txt');
 %dataList = dataList(1:10);
 
-excelwrite = {'File', 'Amplitude','Scaled NCV'};
+excelwrite = {'Group', 'Amplitude','Scaled NCV'};
 
 for k=1:length(dataList)
     data = load(dataList(k).name);
     titleOfGraph = string(dataList(k).name);
+    temp = titleOfGraph.split();
+    if temp(1) ~= 'ctrl'
+        group = temp(1) + " " + temp(2);
+    else
+        group = temp(1);
+    end
+    
     Time = data(:,1);
     Voltage = data(:,2);
     %% Figure out length & number of traces
@@ -30,7 +37,7 @@ for k=1:length(dataList)
         [artifactTimes, baselinedTraces, ~, ~, ~, ~, ~] = betterBaseline(times, traceMatrix);
     catch   
         warning('error in calculating %s', titleOfGraph)
-        excelwrite = [excelwrite; titleOfGraph, NaN, NaN];
+        excelwrite = [excelwrite; group, NaN, NaN];
         continue
     end
     % for i=1:length(artifactTimes)
@@ -48,7 +55,7 @@ for k=1:length(dataList)
     meanTrace = mean(baselinedTraces, 2);    
      
     [indices, temp, latency] = findROI(meanTrace,times,k);
-    excelwrite = [excelwrite; titleOfGraph, temp, 1/latency];
+    excelwrite = [excelwrite; group, temp, 1/latency];
     %plot(times(indices), meanTrace(indices), 'b-', 'LineWidth', 2)
 
 %     try
