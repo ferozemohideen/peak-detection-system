@@ -1,7 +1,7 @@
 %% Read in data
 clear
 dataList = dir('ptx different conc/*.txt');
-%dataList = dataList(1:10);
+dataList = dataList([105, 109, 111, 114, 115, 117]);
 
 excelwrite = {'Group', 'Amplitude','Scaled NCV'};
 
@@ -63,6 +63,7 @@ for k=1:length(dataList)
 
     %xdistance = (times(indices(end))-times(indices(1)));
     %rectangle('Position', [times(indices(1)) meanTrace(peakIndex)-0.1 xdistance 2*abs(meanTrace(peakIndex))])
+    title(titleOfGraph)
 end
 %csvwrite('ctrlamplitudes', transpose(ctrlamplitudes));
 %csvwrite('ctrllatencies', transpose(1./ctrllatencies));
@@ -70,5 +71,5 @@ end
 %csvwrite('ptxamplitudes', transpose(ptxamplitudes));
 %csvwrite('ptxlatencies', transpose(1./ptxlatencies));
 filename = 'ptxdiffconc.xlsx';
-xlswrite(filename,excelwrite)
+%xlswrite(filename,excelwrite)
 
