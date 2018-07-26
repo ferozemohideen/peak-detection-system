@@ -1,12 +1,12 @@
 function [indices, amplitude, latency] = findROI(meanTrace, times, k)
     %figure(k)
     [~, ~, startIndex, endIndex, ~, maxindex, firstmin] = betterBaseline(times, meanTrace);
-    plot(times,meanTrace,'r-')
+    %plot(times,meanTrace,'r-')
     %hold on
     %plot(times(maxindex:end), smoothdata(meanTrace(maxindex:end), 'movmean', 11), 'b-')
-    hold on
-    plot(times(startIndex), meanTrace(startIndex), 'g*', times(endIndex), meanTrace(endIndex), 'b*',...
-        times(firstmin+maxindex), meanTrace(firstmin+maxindex), 'b*')
+    %hold on
+    %plot(times(startIndex), meanTrace(startIndex), 'g*', times(endIndex), meanTrace(endIndex), 'b*',...
+       % times(firstmin+maxindex), meanTrace(firstmin+maxindex), 'b*')
     stdev = 0;
     smoothingfactor = 12;
     
@@ -14,15 +14,15 @@ function [indices, amplitude, latency] = findROI(meanTrace, times, k)
         wave = meanTrace(endIndex:end)-(meanTrace(endIndex)-meanTrace(startIndex));
         wave = smoothdata(wave,'movmean', smoothingfactor);
         %plot(times(endIndex:end), wave, 'b-')
-        [~, ~, wdths, proms] = findpeaks(meanTrace(startIndex-100:startIndex));
+        [~, ~, wdths, proms] = findpeaks(meanTrace(1:startIndex));
         [~, locs] = findpeaks(wave, 'MinPeakProminence', max(proms), 'MinPeakWidth', mean(wdths));
         [~, vlocs] = findpeaks(-wave, 'MinPeakProminence', max(proms), 'MinPeakWidth', mean(wdths));
 
     %     [pks, locs] = findpeaks(-meanTrace(endIndex:end),...%'MinPeakHeight', 2*max(pks), 
     %                 );
-        plot(times(locs+endIndex),meanTrace(locs+endIndex), 'b*', times(vlocs+endIndex), meanTrace(vlocs+endIndex), 'g*')
+        %plot(times(locs+endIndex),meanTrace(locs+endIndex), 'b*', times(vlocs+endIndex), meanTrace(vlocs+endIndex), 'g*')
         %plot(times(locs+endIndex),wave(locs), 'b*', times(vlocs+endIndex), wave(vlocs), 'g*')
-        axis([times(startIndex-50) times(endIndex+200) -5 5])
+        %axis([times(startIndex-50) times(endIndex+200) -5 5])
 
         checkvec = abs(gradient(smoothdata(meanTrace, 'movmean', smoothingfactor)));
 
@@ -145,9 +145,9 @@ function [indices, amplitude, latency] = findROI(meanTrace, times, k)
         % < 9e-02
         values = meanTrace(indices);
         stdev = std(values);
-        fprintf("%d   %d\n", k, stdev)
+        %fprintf("%d   %d\n", k, stdev)
         smoothingfactor = smoothingfactor+1;
     end
-    plot(times(indices), meanTrace(indices), 'b-', 'LineWidth', 2)
+    %plot(times(indices), meanTrace(indices), 'b-', 'LineWidth', 2)
     amplitude = abs(max(values)-min(values));
 end

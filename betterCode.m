@@ -1,11 +1,15 @@
 %% Read in data
 clear
 dataList = dir('ptx different conc/*.txt');
-dataList = dataList([105, 109, 111, 114, 115, 117]);
-
+dataList = dataList(103:118);
+totallatency = [];
 excelwrite = {'Group', 'Amplitude','Scaled NCV'};
+stdevs = [];
 
+amplitudelist=[];
 for k=1:length(dataList)
+    latencylist=[];
+    figure(k)
     data = load(dataList(k).name);
     titleOfGraph = string(dataList(k).name);
     temp = titleOfGraph.split();
@@ -28,7 +32,7 @@ for k=1:length(dataList)
         traceMatrix(:,i) = Voltage(2000*(i-1)+1:2000*i);
     end
 
-     figure(k)
+     %figure(k)
 %     for i=1:numtraces
 %         plot(times, traceMatrix(:,i), 'r-')
 %         hold on
@@ -53,17 +57,35 @@ for k=1:length(dataList)
     %     hold on
     % end
     meanTrace = mean(baselinedTraces, 2);    
-     
-    [indices, temp, latency] = findROI(meanTrace,times,k);
-    excelwrite = [excelwrite; group, temp, 1/latency];
+    for i=1:numtraces 
+        try
+            [indices, amplitude, latency] = findROI(traceMatrix(:,i),times,k);
+            latencylist = [latencylist latency];
+            amplitudelist = [amplitudelist amplitude];
+        catch
+            continue;
+        end
+    end
+    %excelwrite = [excelwrite; group, temp, 1/latency];
     %plot(times(indices), meanTrace(indices), 'b-', 'LineWidth', 2)
-
-%     try
-%         axis([times(startIndex-50) times(indices(end)+400) meanTrace(peakIndex)-5 -meanTrace(peakIndex)+5])
-
-    %xdistance = (times(indices(end))-times(indices(1)));
-    %rectangle('Position', [times(indices(1)) meanTrace(peakIndex)-0.1 xdistance 2*abs(meanTrace(peakIndex))])
-    title(titleOfGraph)
+    [N, edges] = histcounts(latencylist, 19);
+    centers=[];
+    for l=1:length(edges)-1
+        centers = [centers (edges(l)+edges(l+1))/2];
+    end
+    
+    % weighted average
+    % totallatency = [totallatency sum(centers.*(N./sum(N)))];
+    
+    % mode
+    histogram(latencylist, 19)
+%     totallatency = [totallatency centers(find(N==max(N),1))];
+%     title(titleOfGraph + ' ' + (centers(find(N==max(N),1))))
+    
+    % median
+    totallatency = [totallatency median(latencylist)];
+    title(titleOfGraph + ' ' + mode(latencylist))
+    stdevs = [stdevs std(latencylist)];
 end
 %csvwrite('ctrlamplitudes', transpose(ctrlamplitudes));
 %csvwrite('ctrllatencies', transpose(1./ctrllatencies));
@@ -72,4 +94,5 @@ end
 %csvwrite('ptxlatencies', transpose(1./ptxlatencies));
 filename = 'ptxdiffconc.xlsx';
 %xlswrite(filename,excelwrite)
+%histogram(latencylist, 20)
 
