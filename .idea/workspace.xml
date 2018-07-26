@@ -2,15 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c0fc170a-afa6-4cf6-957f-88314dcced27" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/TEM images/#10/desktop.ini" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TEM images/#12/desktop.ini" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TEM images/#13/desktop.ini" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TEM images/#15/desktop.ini" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TEM images/#16/desktop.ini" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TEM images/#9/desktop.ini" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_visualization.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_visualization.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/machinelearning/axondeepseg" beforeDir="false" afterPath="$PROJECT_DIR$/machinelearning/axondeepseg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ptxdiffconc.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/ptxdiffconc.xlsx" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -24,8 +16,8 @@
       <file leaf-file-name="data_visualization.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/data_visualization.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="354">
-              <caret line="21" column="55" selection-start-line="21" selection-start-column="55" selection-end-line="21" selection-end-column="55" />
+            <state relative-caret-position="388">
+              <caret line="23" column="79" selection-start-line="23" selection-start-column="79" selection-end-line="23" selection-end-column="79" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
               </folding>
@@ -53,8 +45,8 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-15" />
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="1905" />
     <option name="width" value="1948" />
     <option name="height" value="2075" />
   </component>
@@ -78,7 +70,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../PYTHON/django-machine-learning" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunDashboard">
@@ -132,7 +124,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-6" y="-6" width="1549" height="837" extended-state="6" />
+    <frame x="-6" y="-6" width="1549" height="837" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.12491867" />
@@ -195,8 +187,8 @@
     <entry file="file://$PROJECT_DIR$/machine learning/axondeepseg.py" />
     <entry file="file://$PROJECT_DIR$/data_visualization.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="354">
-          <caret line="21" column="55" selection-start-line="21" selection-start-column="55" selection-end-line="21" selection-end-column="55" />
+        <state relative-caret-position="388">
+          <caret line="23" column="79" selection-start-line="23" selection-start-column="79" selection-end-line="23" selection-end-column="79" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
           </folding>
