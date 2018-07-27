@@ -1,4 +1,4 @@
-function [indices, amplitude, latency] = findROI(meanTrace, times, k)
+function [indices, amplitude, latency, startIndex] = findROI(meanTrace, times, k)
     %figure(k)
     [~, ~, startIndex, endIndex, ~, maxindex, firstmin] = betterBaseline(times, meanTrace);
     %plot(times,meanTrace,'r-')
