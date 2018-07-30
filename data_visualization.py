@@ -37,7 +37,7 @@ fig, ax = plt.subplots(2, 1, figsize=(10,5))
 sns.lineplot(x=df.index, y=df['mine'], marker='o', label='Program Estimation', color="#bb3f3f", ax=ax[0])
 sns.lineplot(x=df.index, y=df['hieu'], marker='o', label='Hieu\'s Estimation', color="#000000", ax=ax[0])
 
-ax[0].set_xlabel('Ptx Concentrations')
+# ax[0].set_xlabel('Ptx Concentrations')
 ax[0].set_ylabel('Mean NCV')
 ax[0].legend()
 
@@ -64,7 +64,7 @@ fig2, ax2 = plt.subplots(2,1,figsize=(7,5))
 sns.lineplot(x=df2.index, y=df2['mine'], marker='o', label='Program Estimation', color="#bb3f3f",ax=ax2[0])
 sns.lineplot(x=df2.index, y=df2['hieu'], marker='o', label='Hieu\'s Estimation', color="#000000",ax=ax2[0])
 
-ax2[0].set_xlabel('Bz Concentrations')
+# ax2[0].set_xlabel('Bz Concentrations')
 ax2[0].set_ylabel('Mean NCV')
 ax2[0].legend()
 
@@ -75,6 +75,34 @@ ax2[1].set_xlabel('Bz Concentrations')
 ax2[1].set_ylabel('Median NCV')
 ax2[1].legend()
 
-ax2[0].set_title('Bortezomib dose response 7d NCV')
+ax2[0].set_title('Bortezomib NCV')
+plt.tight_layout()
+
+
+df3 = pd.DataFrame(index=['1 - Control', '2 - 0.1 nM', '3 - 1 nM', '4 - 10 nM', '5 - 1 uM'],
+                  data={'mine': [0.273118906, 0.27716886, 0.281910853, 0.287286794, 0],
+                        'hieu': [0.271775427, 0.293305576, 0.280578413, 0.293844232, 0]})
+
+df3_1 = df3
+df3_1['mine'] = [0.27425039, 0.272888889, 0.27650651, 0.2571949, 0]
+df3_1['hieu'] = [0.278822412, 0.287749288, 0.267690058, 0.263492063, 0]
+
+
+fig3, ax3 = plt.subplots(2,1,figsize=(7,5))
+sns.lineplot(x=df3.index, y=df3['mine'], marker='o', label='Program Estimation', color="#bb3f3f",ax=ax3[0])
+sns.lineplot(x=df3.index, y=df3['hieu'], marker='o', label='Hieu\'s Estimation', color="#000000",ax=ax3[0])
+
+# ax3[0].set_xlabel('Vn Concentrations')
+ax3[0].set_ylabel('Mean NCV')
+ax3[0].legend()
+
+sns.lineplot(x=df3_1.index, y=df3_1['mine'], marker='o', label='Program Estimation', color="#bb3f3f",ax=ax3[1])
+sns.lineplot(x=df3_1.index, y=df3_1['hieu'], marker='o', label='Hieu\'s Estimation', color="#000000",ax=ax3[1])
+
+ax3[1].set_xlabel('Vn Concentrations')
+ax3[1].set_ylabel('Median NCV')
+ax3[1].legend()
+
+ax3[0].set_title('Vn NCV')
 plt.tight_layout()
 plt.show()
