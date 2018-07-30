@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c0fc170a-afa6-4cf6-957f-88314dcced27" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/betterCode.asv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/findROI.asv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/axondeepseg" beforeDir="false" afterPath="$PROJECT_DIR$/machinelearning/axondeepseg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_visualization.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_visualization.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ptxdiffconc.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/ptxdiffconc.xlsx" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -15,11 +15,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="data_visualization.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="data_visualization.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/data_visualization.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret selection-end-line="3" selection-end-column="31" />
+            <state relative-caret-position="200">
+              <caret line="33" column="37" selection-start-line="33" selection-start-column="37" selection-end-line="33" selection-end-column="37" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
               </folding>
@@ -27,7 +27,16 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="control_data_viz.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="indexing.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../python-postgresql/AxoSim/Lib/site-packages/pandas/core/indexing.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="612">
+              <caret line="1339" column="26" selection-start-line="1339" selection-start-column="26" selection-end-line="1339" selection-end-column="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="control_data_viz.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/control_data_viz.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="170">
@@ -55,14 +64,15 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/machine learning/axondeepseg.py" />
-        <option value="$PROJECT_DIR$/data_visualization.py" />
         <option value="$PROJECT_DIR$/control_data_viz.py" />
+        <option value="$PROJECT_DIR$/data_visualization.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="1905" />
-    <option name="width" value="1948" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="985" />
+    <option name="y" value="347" />
+    <option name="width" value="2475" />
     <option name="height" value="2075" />
   </component>
   <component name="ProjectView">
@@ -85,7 +95,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../PYTHON/django-machine-learning" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunDashboard">
@@ -100,7 +110,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.control_data_viz">
+  <component name="RunManager" selected="Python.data_visualization">
     <configuration name="control_data_viz" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="AxoSim" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -143,8 +153,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.control_data_viz" />
         <item itemvalue="Python.data_visualization" />
+        <item itemvalue="Python.control_data_viz" />
       </list>
     </recent_temporary>
   </component>
@@ -162,18 +172,18 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-6" y="-6" width="1549" height="837" extended-state="7" />
+    <frame x="394" y="139" width="990" height="830" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.12491867" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21165644" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3292011" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32823366" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Python Console" order="7" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.566064" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39807162" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3977747" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -189,7 +199,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="2" />
+      <option name="time" value="4" />
     </breakpoint-manager>
   </component>
   <component name="debuggerHistoryManager">
@@ -202,6 +212,46 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/data_visualization.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="3" selection-end-column="31" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/control_data_viz.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data_visualization.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="3" selection-end-column="31" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/control_data_viz.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/data_visualization.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="731">
@@ -223,20 +273,27 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/machine learning/axondeepseg.py" />
-    <entry file="file://$PROJECT_DIR$/data_visualization.py">
+    <entry file="file://$PROJECT_DIR$/control_data_viz.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="3" selection-end-column="31" />
+        <state relative-caret-position="170">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/control_data_viz.py">
+    <entry file="file://$PROJECT_DIR$/../python-postgresql/AxoSim/Lib/site-packages/pandas/core/indexing.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" selection-start-line="10" selection-end-line="10" />
+        <state relative-caret-position="612">
+          <caret line="1339" column="26" selection-start-line="1339" selection-start-column="26" selection-end-line="1339" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data_visualization.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="33" column="37" selection-start-line="33" selection-start-column="37" selection-end-line="33" selection-end-column="37" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
           </folding>
