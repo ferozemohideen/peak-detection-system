@@ -1,6 +1,6 @@
 %% Read in data
 clear
-dataList = dir('ptx different conc/*.txt');
+dataList = dir('Bz test/*.txt');
 %dataList = dataList(103:118);
 totallatency = [];
 excelwrite = {'Group', 'Amplitude','Scaled NCV'};
@@ -90,7 +90,7 @@ for k=1:length(dataList)
 %     hold on
 %     plot(times(latencylist+startIndexList), meanTrace(latencylist+startIndexList), 'b*')
 %     plot(times(round(median(latencylist + startIndexList))), meanTrace(round(median(latencylist + startIndexList))), 'g*')
-    fprintf("finished trial: %d\n", k); 
+    fprintf("finished trial: %d/%d\n", k,length(dataList)); 
     excelwrite = [excelwrite; group, median(amplitudelist), median(latencylist)];
 end
 %csvwrite('ctrlamplitudes', transpose(ctrlamplitudes));
@@ -98,7 +98,7 @@ end
 
 %csvwrite('ptxamplitudes', transpose(ptxamplitudes));
 %csvwrite('ptxlatencies', transpose(1./ptxlatencies));
-filename = 'ptxdiffconc.xlsx';
+filename = 'bztest.xlsx';
 xlswrite(filename,excelwrite)
 %histogram(latencylist, 20)
 
