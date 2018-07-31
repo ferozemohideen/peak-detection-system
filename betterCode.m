@@ -1,6 +1,6 @@
 %% Read in data
 clear
-dataList = dir('Vn test/*.txt');
+dataList = dir('ptx 200 7d/*.txt');
 %dataList = dataList(103:118);
 totallatency = [];
 excelwrite = {'Group', 'Amplitude','Scaled NCV'};
@@ -98,7 +98,7 @@ end
 
 %csvwrite('ptxamplitudes', transpose(ptxamplitudes));
 %csvwrite('ptxlatencies', transpose(1./ptxlatencies));
-filename = 'vntest.xlsx';
+filename = 'justptx200nM.xlsx';
 xlswrite(filename,excelwrite)
 %histogram(latencylist, 20)
 
