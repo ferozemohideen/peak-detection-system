@@ -1,12 +1,24 @@
 %% Read in data
 clear
-foldername = 'ptx 200 7d/';
-dataList = dir('ptx 200 7d/*.txt');
-%dataList = dataList(103:118);
+foldername = 'Files/';
+subfolder =  dir(foldername);
+dirFlags = [subfolder.isdir] & ~strcmp({subfolder.name},'.') & ~strcmp({subfolder.name},'..');
+subfolder = subfolder(dirFlags);
+subfoldername = subfolder(1).name;
+
+dataList = dir(strcat(foldername, subfoldername, '/*.txt'));
 totallatency = [];
-excelwrite = {'Group', 'Amplitude','Scaled NCV'};
+excelwrite = {'Group', 'Amplitude','Latency', 'Length (mm)', 'NCV (m/s)'};
 stdevs = [];
 
+lengthfile = dir(strcat(foldername, '*.xlsx'));
+lengthfilename = lengthfile(1).name;
+[lengths, txt, raw] = xlsread(strcat(foldername, lengthfilename));
+names = [];
+for i=1:length(txt)
+    temp = string(txt{i});
+    names = [names temp]; 
+end
 
 for k=1:length(dataList)
     latencylist=[];
@@ -15,7 +27,7 @@ for k=1:length(dataList)
     
     %figure(k)
     
-    data = load(strcat(foldername, dataList(k).name));
+    data = load(strcat(foldername, subfoldername, '/', dataList(k).name));
     titleOfGraph = string(dataList(k).name);
     temp = titleOfGraph.split();
     %if temp(1) == 'ctrl'
@@ -91,15 +103,22 @@ for k=1:length(dataList)
 %     hold on
 %     plot(times(latencylist+startIndexList), meanTrace(latencylist+startIndexList), 'b*')
 %     plot(times(round(median(latencylist + startIndexList))), meanTrace(round(median(latencylist + startIndexList))), 'g*')
-    fprintf("finished trial: %d/%d\n", k,length(dataList)); 
-    excelwrite = [excelwrite; group, median(amplitudelist), median(latencylist)];
+    fprintf("Analyzing file \'%s\' (%d/%d)\n", titleOfGraph, k,length(dataList));
+    
+    index = find(names == titleOfGraph);
+    distance = lengths(index);
+    latency = median(latencylist);
+    amplitude = median(amplitudelist);
+    NCV = distance/(0.05*latency);
+    excelwrite = [excelwrite; group, amplitude, latency , distance, NCV];
 end
 %csvwrite('ctrlamplitudes', transpose(ctrlamplitudes));
 %csvwrite('ctrllatencies', transpose(1./ctrllatencies));
 
 %csvwrite('ptxamplitudes', transpose(ptxamplitudes));
 %csvwrite('ptxlatencies', transpose(1./ptxlatencies));
-filename = 'justptx200nM.xlsx';
+filename = strcat(subfoldername, '.xlsx');
 xlswrite(filename,excelwrite)
+fprintf("All done!\n");
 %histogram(latencylist, 20)
 
