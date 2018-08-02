@@ -1,4 +1,3 @@
-%% Read in data
 clear
 foldername = 'Files/';
 subfolder =  dir(foldername);
@@ -20,10 +19,20 @@ for i=1:length(txt)
     names = [names temp]; 
 end
 
+M = containers.Map('KeyType', 'char', 'ValueType', 'any');
+
 for k=1:length(dataList)
     data = load(strcat(foldername, subfoldername, '/', dataList(k).name));
     group = string(dataList(k).name);
-
+    words = lower(group);
+    words = words.split();
+    if words(1) == "ctrl"
+        key = 'ctrl';
+    else
+        key = strcat(words(1), ' ', words(2));
+        key = char(key);
+    end
+    
     Time = data(:,1);
     Voltage = data(:,2);
     %% Figure out length & number of traces
@@ -59,7 +68,7 @@ for k=1:length(dataList)
     
     index = find(names == group);
     if isempty(index)
-        fprintf("Couldn't find the length of %s in the lengths file! To continue without this file, press y. Otherwise, press n to exit.", group);
+        fprintf("Couldn't find the length of %s in the lengths file!\nTo continue without this file, press y. Otherwise, press n to exit.", group);
         letter = input(' Enter: ', 's');
         if letter == "y"
             excelwrite = [excelwrite; group, 0, 0, 0, 0];
@@ -74,10 +83,44 @@ for k=1:length(dataList)
     amplitude = median(amplitudelist);
     NCV = distance/(0.05*latency);
     excelwrite = [excelwrite; group, amplitude, latency , distance, NCV];
+    
+    if isKey(M, key)
+        M(key) = [M(key) NCV];
+    else
+        M(key) = NCV;
+    end
+    
 end
 
 filename = strcat(subfoldername, '.xlsx');
+filename = fullfile('/Outputs/', filename);
 xlswrite(filename,excelwrite)
+
+k = keys(M);
+val = values(M);
+figure(1)
+ncvs = [];
+errors = [];
+for i = 1:length(M)
+    ncvs = [ncvs mean(val{i})];
+    errors = [errors std(val{i})];
+end
+scatter(1:length(M), ncvs, 40, 'LineWidth', 2, 'MarkerEdgeColor',[0 .5 .5], ...
+              'MarkerFaceColor',[0 .7 .7])
+hold on
+errorbar(1:length(M), ncvs, errors)
+
+xlim([0, length(M) + 1]);
+ylim([0, max(ncvs+errors) + 0.1]);
+title(strcat(subfoldername, ' NCV'))
+ylabel('NCV m/s')
+xlabel('Treatment')
+ax = gca;
+ax.XTick = 1:length(M);
+ax.XTickLabels = k;
+grid on;    
+saveas(gcf, strcat('/Outputs/Images/', charsubfoldername, '.png'))
 fprintf("All done!\n");
+
 
 
