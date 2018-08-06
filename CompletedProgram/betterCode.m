@@ -45,7 +45,7 @@ for k=1:length(dataList)
     for i = 1:length(Time)/tracelength
         traceMatrix(:,i) = Voltage(2000*(i-1)+1:2000*i);
     end
-    
+
     [artifactTimes, baselinedTraces, ~, ~, ~, ~, ~] = betterBaseline(times, traceMatrix);
     meanTrace = mean(baselinedTraces, 2);
     
@@ -63,7 +63,7 @@ for k=1:length(dataList)
             continue;
         end
     end
-        
+    
     fprintf("Analyzing file \'%s\' (%d/%d)\n", group, k,length(dataList));
     
     index = find(names == group);
