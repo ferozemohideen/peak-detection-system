@@ -1,5 +1,7 @@
 function savePlots(M, subfoldername)
-%	savePlots.m written by Feroze Mohideen last edited 8/9/18
+%	savePlots.m 
+%   written by Feroze Mohideen 
+%   last edited 8/9/18
 %   
 %   INPUTS
 %   M = map assigning each group to a set of NCV values

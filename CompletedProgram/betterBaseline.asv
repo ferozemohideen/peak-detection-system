@@ -1,10 +1,12 @@
-function [output, startIndex, endIndex, maxindex, firstmin] = betterBaseline(trace)
+function [output, startIndex, endIndex, maxindex, firstmin] = betterBaseline(times, trace)
 %	betterBaseline.m 
 %   written by Feroze Mohideen 
 %   last edited 8/9/18
 %   
 %   INPUTS
-%   trace = each individual trace of a file
+%   times = time vector, constant across traces
+%   traceMatrix = matrix of trace data, with each trace as a column of the
+%   matrix
 %
 %   OUTPUTS
 %   index of real trace beginning (ignoring dip in signal following
@@ -20,8 +22,8 @@ function [output, startIndex, endIndex, maxindex, firstmin] = betterBaseline(tra
     diffamount = 5;
         
     % find start of SA by seeing where the trace suddenly drops
-    startIndex = find(abs(diff(trace)) > diffamount, 1);
-    output = trace-mean(trace(1:startIndex));
+    start = find(abs(diff(trace)) > diffamount, 1);
+    output = trace-mean(trace(1:start));
     maxindex = find(trace == max(trace), 1);
     smoothendata = smoothdata(trace(maxindex:end),'movmean',12);
 
@@ -35,6 +37,7 @@ function [output, startIndex, endIndex, maxindex, firstmin] = betterBaseline(tra
     [~, locs] = findpeaks(smoothendata(firstmin:end));
     finish = locs(1);
         
+    startIndex = start;
     endIndex = finish+maxindex+firstmin;
 end
         

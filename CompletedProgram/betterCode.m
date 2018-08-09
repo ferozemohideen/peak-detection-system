@@ -31,24 +31,23 @@ for k=1:length(dataList)
     for i = 1:length(Time)/tracelength
         traceMatrix(:,i) = Voltage(2000*(i-1)+1:2000*i);
     end
-    [artifactTimes, baselinedTraces, ~, ~, ~, ~, ~] = betterBaseline(times, traceMatrix);
+    [baselinedTraces, ~, ~, ~, ~] = betterBaseline(traceMatrix);
 
     latencylist=[];
     amplitudelist=[];
-    startIndexList=[];
     
-    % Through each file, find the peak in each trace and collect results
+    % Through each file, find the peak in each trace and append results
     for i=1:numtraces 
         try
-            [indices, amplitude, latency, startIndex] = findROI(traceMatrix(:,i),times,k);
+            [indices, amplitude, latency, startIndex] = findROI(traceMatrix(:,i));
             latencylist = [latencylist latency];
-            startIndexList = [startIndexList startIndex];
             amplitudelist = [amplitudelist amplitude];
         catch
             continue;
         end
     end
     
+    % print progress
     fprintf("Analyzing file \'%s\' (%d/%d)\n", group, k,length(dataList));
     
     % Lookup length from lengths file 
