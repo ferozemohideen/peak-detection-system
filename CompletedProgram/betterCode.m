@@ -2,7 +2,7 @@ clear
 
 % Set up vectors and file locations, compile list of input data
 [foldername, subfoldername, dataList,...
-    excelwrite, totallatency, names, lengths, M] = setup();
+    excelwrite, names, lengths, M] = setup();
 
 % Run through the list of data
 for k=1:length(dataList)

@@ -1,4 +1,19 @@
-function [foldername, subfoldername, dataList, excelwrite, totallatency, names, lengths, M] = setup()
+function [foldername, subfoldername, dataList, excelwrite, names, lengths, M] = setup()
+%	setup.m 
+%   written by Feroze Mohideen 
+%   last edited 8/9/18
+%
+%   OUTPUTS
+%   foldername = folder of inputs
+%   subfoldername = folder of .txt files in folder
+%   dataList = list of all .txt files to analyze from folder
+%   excelwrite = beginning of aggregate excel data, just section titles for
+%   now
+%   names = name of each text file
+%   lengths = lengths extracted from lengths file
+%   M = map which maps each treatment to a list of NCVs
+
+    % gather inputs from files
     foldername = 'Files/';
     subfolder =  dir(foldername);
     dirFlags = [subfolder.isdir] & ~strcmp({subfolder.name},'.') & ~strcmp({subfolder.name},'..');
@@ -18,6 +33,7 @@ function [foldername, subfoldername, dataList, excelwrite, totallatency, names, 
         temp = string(txt{i});
         names = [names temp]; 
     end
-
+    
+    % construct map to be filled in later
     M = containers.Map('KeyType', 'char', 'ValueType', 'any');
 end

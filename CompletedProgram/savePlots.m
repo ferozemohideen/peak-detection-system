@@ -34,7 +34,7 @@ function savePlots(M, subfoldername)
     xlim([0, length(M) + 1]);
     ylim([0, max(ncvs+errors) + 0.1]);
     title(strcat(subfoldername, ' NCV'))
-    ylabel('NCV m/s')
+    ylabel('Mean NCV m/s')
     xlabel('Treatment')
     ax = gca;
     ax.XTick = 1:length(M);
