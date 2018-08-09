@@ -39,7 +39,7 @@ for k=1:length(dataList)
     % Through each file, find the peak in each trace and append results
     for i=1:numtraces 
         try
-            [indices, amplitude, latency, startIndex] = findROI(traceMatrix(:,i));
+            [indices, amplitude, latency] = findROI(traceMatrix(:,i));
             latencylist = [latencylist latency];
             amplitudelist = [amplitudelist amplitude];
         catch

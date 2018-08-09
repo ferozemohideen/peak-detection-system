@@ -1,5 +1,5 @@
-function [indices, amplitude, latency] = findROI(trace)
-%	findROI.m (ROI = region of interest) 
+function [indices, amplitude, latency, startIndex] = findROI(meanTrace)
+%	findROI.m (ROI = region of interest 
 %   written by Feroze Mohideen 
 %   last edited 8/9/18
 %   
@@ -7,30 +7,34 @@ function [indices, amplitude, latency] = findROI(trace)
 %   trace = each individual trace of a file
 %
 %   OUTPUTS
-%   indices = region of the peak it has guessed
-%   amplitude = guessed amplitude of peak
-%   latency = distance from peak to startIndex
+%   index of real trace beginning (ignoring dip in signal following
+%   artifact)
+%   output = matrix of each trace subtraced by its noise, making it
+%   baselined
+%   startIndex = start of SA, where latency is measured from
+%   endIndex = end of SA, where peak detection starts
+%   maxindex = index of max value, ie height of SA
+%   firstmin = index right after first dip after SA
 
     % Gather index parameters
-    [~, startIndex, endIndex, maxindex, firstmin] = betterBaseline(trace);
+    [~, startIndex, endIndex, maxindex, firstmin] = betterBaseline(meanTrace);
     smoothingfactor = 3;    
 
     % Baseline wave
-    wave = trace(endIndex:end)-(trace(endIndex)-trace(startIndex));
+    wave = meanTrace(endIndex:end)-(meanTrace(endIndex)-meanTrace(startIndex));
     wave = smoothdata(wave,'movmean', smoothingfactor);
 
     % detect peaks that are more significant than the noise
-    [~, ~, wdths, proms] = findpeaks(trace(1:startIndex));
+    [~, ~, wdths, proms] = findpeaks(meanTrace(1:startIndex));
     [~, locs] = findpeaks(wave, 'MinPeakProminence', 4*mean(proms), 'MinPeakWidth', mean(wdths));
     [~, vlocs] = findpeaks(-wave, 'MinPeakProminence', 4*mean(proms), 'MinPeakWidth', mean(wdths));
 
 
-    checkvec = abs(gradient(smoothdata(trace, 'movmean', smoothingfactor)));
-    
-    % find the peak under various conditions:
+    checkvec = abs(gradient(smoothdata(meanTrace, 'movmean', smoothingfactor)));
+
     if isempty(vlocs) % no valleys, only peak
         peak = locs(1)+endIndex;
-        if abs(trace(endIndex) - trace(firstmin+maxindex)) > 1
+        if abs(meanTrace(endIndex) - meanTrace(firstmin+maxindex)) > 1
             indices = endIndex:peak;
         else
             indices = [];
@@ -47,7 +51,7 @@ function [indices, amplitude, latency] = findROI(trace)
         passed = false;
         while(1)
             indices = [indices i];
-            if trace(i) <= trace(indices(1))
+            if meanTrace(i) <= meanTrace(indices(1))
                 passed = true;
             end
             if checkvec(i) < 0.01 && passed
@@ -59,7 +63,7 @@ function [indices, amplitude, latency] = findROI(trace)
         latency = peak-startIndex;
     elseif isempty(locs) % no peaks, only valley
         valley = vlocs(1)+endIndex;
-        if abs(trace(endIndex) - trace(firstmin+maxindex)) > 1
+        if abs(meanTrace(endIndex) - meanTrace(firstmin+maxindex)) > 1
             indices = endIndex:valley;
         else
             indices = [];
@@ -75,7 +79,7 @@ function [indices, amplitude, latency] = findROI(trace)
         passed = false;
         while(1)
             indices = [indices i];
-            if trace(i) >= trace(indices(1))
+            if meanTrace(i) >= meanTrace(indices(1))
                 passed = true;
             end
             if checkvec(i) < 0.01 && passed
@@ -89,7 +93,7 @@ function [indices, amplitude, latency] = findROI(trace)
         valley = vlocs(1)+endIndex;
         peak = locs(1)+endIndex;
         if vlocs(1) < locs(1) % valley first    
-            if abs(trace(endIndex) - trace(firstmin+maxindex)) > 1
+            if abs(meanTrace(endIndex) - meanTrace(firstmin+maxindex)) > 1
                 indices = endIndex:valley;
             else
                 indices = [];
@@ -105,7 +109,7 @@ function [indices, amplitude, latency] = findROI(trace)
             passed = false;
             while(1)
                 indices = [indices i];
-                if trace(i) >= trace(indices(1))
+                if meanTrace(i) >= meanTrace(indices(1))
                     passed = true;
                 end
                 if (checkvec(i) < 0.01 && passed) || i == peak  
@@ -116,7 +120,7 @@ function [indices, amplitude, latency] = findROI(trace)
 
             latency = valley-startIndex;
         else % peak first
-            if abs(trace(endIndex) - trace(firstmin+maxindex)) > 1
+            if abs(meanTrace(endIndex) - meanTrace(firstmin+maxindex)) > 1
                 indices = endIndex:peak;
             else
                 indices = [];
@@ -131,7 +135,7 @@ function [indices, amplitude, latency] = findROI(trace)
             i = peak+1;
             passed = false;
             while(1)
-                if trace(i) <= trace(indices(1))
+                if meanTrace(i) <= meanTrace(indices(1))
                     passed = true;
                 end
                 indices = [indices i];
@@ -144,6 +148,6 @@ function [indices, amplitude, latency] = findROI(trace)
             latency = peak-startIndex;
         end
     end  
-    values = trace(indices);
+    values = meanTrace(indices);
     amplitude = abs(max(values)-min(values));
 end
