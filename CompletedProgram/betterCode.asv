@@ -1,12 +1,11 @@
 clear
-
-% Set up vectors and file locations, compile list of input data
+%% Set up vectors and file locations, compile list of input data
 [foldername, subfoldername, dataList,...
     excelwrite, totallatency, names, lengths, M] = setup();
 
-% Run through the list of data
+%% Run through the list of data
 for k=1:length(dataList)
-    % Extract traces from each file and assign file to group
+    %% Extract traces from each file and assign file to group
     data = load(strcat(foldername, subfoldername, '/', dataList(k).name));
     group = string(dataList(k).name);
     words = lower(group);
@@ -21,11 +20,11 @@ for k=1:length(dataList)
     Time = data(:,1);
     Voltage = data(:,2);
     
-    % Figure out length & number of traces
+    %% Figure out length & number of traces
     tracelength = 2000;
     numtraces = length(data)/tracelength;   
 
-    % Bring baseline of data plot to zero, find the time index of right after artifact
+    %% Bring baseline of data plot to zero, find the time index of right after artifact
     traceMatrix = [];
     times = Time(1:2000);
     for i = 1:length(Time)/tracelength
@@ -37,7 +36,7 @@ for k=1:length(dataList)
     amplitudelist=[];
     startIndexList=[];
     
-    % Through each file, find the peak in each trace and collect results
+    %% Through each file, find the peak in each trace and colle
     for i=1:numtraces 
         try
             [indices, amplitude, latency, startIndex] = findROI(traceMatrix(:,i),times,k);
@@ -51,7 +50,6 @@ for k=1:length(dataList)
     
     fprintf("Analyzing file \'%s\' (%d/%d)\n", group, k,length(dataList));
     
-    % Lookup length from lengths file 
     index = find(names == group);
     if isempty(index)
         fprintf("Couldn't find the length of %s in the lengths file!\nTo continue without this file, press y. Otherwise, press n to exit.", group);
@@ -63,8 +61,7 @@ for k=1:length(dataList)
             break;
         end
     end
-    
-    % Calculate outputs
+        
     distance = lengths(index);
     latency = median(latencylist);
     amplitude = median(amplitudelist);
@@ -77,8 +74,7 @@ for k=1:length(dataList)
         M(key) = NCV;
     end    
 end
-
-% Write outputs
+%%
 writeData(M, subfoldername, excelwrite);
 savePlots(M, subfoldername);
 
