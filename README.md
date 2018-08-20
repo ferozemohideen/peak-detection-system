@@ -1,4 +1,4 @@
-# A Novel Peak Detection System for Use in Electrophysiological Systems which Mimic Human Nerve Fibers
+# A Novel Peak Detection System for Use in Microphysiological Systems which Mimic Human Nerve Fibers
 An exploding topic in the scientific world currently is the microphysiological system (MPS) that offers a fast and cost-efficient alternative to traditional drug screening methods. Organoid-on-a-chip is a new technology that allows companies to structure 3D architectures that house biomimetic microversions of human body systems, ranging from heart cells in the cardiac system to tissue interfaces to complete human neurons. The last group is what research has been focused on at AxoSim Technologies located in New Orleans, LA.
 
 ### AxoSim's Nerve-on-a-Chip&trade;
