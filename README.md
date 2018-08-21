@@ -7,5 +7,6 @@ AxoSim has developed a human nerve on a chip MPS using dual hydrogel systems whi
 ### Electrophysiology and the CAP
 The response of the human nerves growing within the patented constructs to clinical drugs was measured by conducting electrophysiological stimulation of the body and measuring how a compound action potential propagated along the grouped axons. Within each output file are 50 or more trace files, which display the waveforms as a result of 50 or more consecutive electrical stimulations. One such file, with time in milliseconds as the x-axis and amplified voltage in mV as the y-axis is found below:
 
-![example file](https://github.com/ferozemohideen/peak-detection-system/Presentation\ Images/intro\ image.png "Logo Title Text 1")
+![example file][id]
+[id]: /Presentation Images/intro image.png?raw=true
 
